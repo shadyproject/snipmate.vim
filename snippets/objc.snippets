@@ -59,8 +59,7 @@ snippet @protocol
 	@end
 # init Definition
 snippet init
-	- (id)init
-	{
+	- (id)init {
 		if (self = [super init]) {
 			${1}
 		}
@@ -68,8 +67,7 @@ snippet init
 	}
 # dealloc Definition
 snippet dealloc
-	- (void) dealloc
-	{
+	- (void) dealloc {
 		${1:deallocations}
 		[super dealloc];
 	}
@@ -104,39 +102,33 @@ snippet ibad
 	- (IBAction)${1:method}:(${2:id})sender;${3}
 # IBAction method
 snippet iba
-	- (IBAction)${1:method}:(${2:id})sender
-	{
+	- (IBAction)${1:method}:(${2:id})sender {
 		${3}
 	}
 # awakeFromNib method
 snippet wake
-	- (void)awakeFromNib
-	{
+	- (void)awakeFromNib {
 		${1}
 	}
 # Class Method
 snippet M
-	+ (${1:id})${2:method}
-	{
+	+ (${1:id})${2:method} {
 		${3:return nil;}
 	}
 # Sub-method (Call super)
 snippet sm
-	- (${1:id})${2:method}
-	{
+	- (${1:id})${2:method} {
 		[super $2];${3}
 		return self;
 	}
 # Accessor Methods For:
 # Object
 snippet objacc
-	- (${1:id})${2:thing}
-	{
+	- (${1:id})${2:thing} {
 		return $2;
 	}
 
-	- (void)set$2:($1)${3:new$2}
-	{
+	- (void)set$2:($1)${3:new$2} {
 		[$3 retain];
 		[$2 release];
 		$2 = $3;
@@ -168,11 +160,9 @@ snippet fora
 snippet	@try
 	@try {
 		${1:statements}
-	}
-	@catch (NSException * e) {
+	} @catch (NSException * e) {
 		${2:handler}
-	}
-	@finally {
+	} @finally {
 		${3:statements}
 	}
 snippet @catch
